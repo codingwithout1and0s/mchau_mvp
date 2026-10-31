@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #141210;
+    --bg-dark: #191613;
+    --bg-card: #221E19;
+    --bg-card-hover: #2C2621;
+    --cream-light: #F4EDE4;
+    --cream-mid: #E8DFC8;
+    --cream-tan: #D9C5AB;
+    --caramel-accent: #C99F72;
+    --caramel-dark: #A87D50;
+    --text-primary: #F4EDE4;
+    --text-secondary: #B8ACA0;
+    --text-muted: #7F7367;
+    --border-subtle: #362E27;
+    --border-cream: #E8DFC8;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Typography Utilities */
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Outer Luxury Editorial Frame matching mockup */
+.editorial-canvas-frame {
+  border: 8px solid #F1E8DC;
+  border-radius: 1.5rem;
+  background-color: #161412;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(0,0,0,0.4);
+}
+
+@media (min-width: 768px) {
+  .editorial-canvas-frame {
+    border-width: 12px;
+    border-radius: 2rem;
+  }
+}
+
+/* Pill Buttons matching the mockups */
+.btn-pill-cream {
+  background-color: #E8DFC8;
+  color: #1A1714;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 1.25rem 0.4rem 0.5rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.btn-pill-cream:hover {
+  background-color: #F4EDE4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(232, 223, 200, 0.25);
+}
+
+.btn-pill-cream:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-pill-cream .btn-icon-circle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: #1A1714;
+  color: #E8DFC8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.btn-pill-cream:hover .btn-icon-circle {
+  transform: rotate(12deg);
+}
+
+.btn-pill-dark {
+  background-color: rgba(26, 23, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(232, 223, 200, 0.3);
+  color: #E8DFC8;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 1.25rem 0.4rem 0.5rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-pill-dark:hover {
+  background-color: rgba(38, 33, 28, 0.95);
+  border-color: #E8DFC8;
+  color: #F4EDE4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn-pill-dark:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-pill-dark .btn-icon-circle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: #E8DFC8;
+  color: #1A1714;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.btn-pill-dark:hover .btn-icon-circle {
+  transform: rotate(12deg);
+}
+
+/* Scalloped Starburst Badge matching mockup */
+.starburst-badge {
+  background-color: #C99F72;
+  color: #1A1714;
+  width: 6.5rem;
+  height: 6.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  font-family: 'Bebas Neue', sans-serif;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+/* Vintage Sticker / Tilt Card */
+.vintage-photo-sticker {
+  border: 4px solid #F4EDE4;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+  transform: rotate(-3deg);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vintage-photo-sticker:hover {
+  transform: rotate(-1deg) scale(1.04);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.65);
+}
+
+/* Stitched / Dashed Border Card */
+.stitched-card {
+  background-color: #241E19;
+  border: 2px dashed #4A3F35;
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+/* Hero Typography Drop Shadow 3D Effect */
+.hero-title-shadow {
+  text-shadow: 3px 4px 0px #0E0C0A, 6px 7px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* Floating Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 22s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #141210;
+}
+::-webkit-scrollbar-thumb {
+  background: #362E27;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C99F72;
+}
